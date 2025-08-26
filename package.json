@@ -1,9 +1,14 @@
 {
   "name": "rag-test-app",
-  "packageManager": "yarn@4.6.0",
+  "packageManager": "yarn@4.9.4",
   "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build:backend": "turbo build --filter=backend",
+    "build:frontend": "turbo build --filter=frontend"
+  }
 }
