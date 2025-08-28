@@ -1,6 +1,6 @@
 from fastapi import UploadFile
-from apps.backend.app.core.config import settings
-from apps.backend.app.core.singleton import SingletonMetaclass
+from app.core.config import settings
+from app.core.singleton import SingletonMetaclass
 
 
 class IOService(SingletonMetaclass):

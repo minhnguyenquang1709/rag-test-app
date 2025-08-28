@@ -3,7 +3,7 @@
 # @TODO: add error handling
 from fastapi import APIRouter, File, UploadFile
 from typing import Annotated
-from apps.backend.app.services import io_service
+from app.services import io_service
 
 
 router = APIRouter(prefix="/upload", tags=["Upload"])
