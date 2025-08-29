@@ -1,0 +1,1 @@
+from .pymupdf_parser import parser_pymupdf

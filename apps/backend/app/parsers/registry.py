@@ -1,9 +1,12 @@
 # app/parsers/registry.py
-from typing import Dict, Type
+from typing import Type
 from .pymupdf_parser import PdfPyMuPDFParser
 from .txt_parser import TxtParser
 
-PARSER_REGISTRY: Dict[str, Type] = {
+PARSER_REGISTRY: dict[str, Type] = {
     ".pdf": PdfPyMuPDFParser,
-    ".txt": TxtParser,
+    # ".txt": TxtParser,
 }
+
+def get_registered():
+  return PARSER_REGISTRY.copy()

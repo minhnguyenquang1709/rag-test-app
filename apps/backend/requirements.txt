@@ -5,3 +5,5 @@ python-docx>=1.2.0
 redis>=6.2.0
 rq>=2.5.0
 python-multipart>=0.0.20 # allow file uploads
+langchain>=0.3.25
+langchain-community>=0.3.25
