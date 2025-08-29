@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "turbo dev",
     "build:backend": "turbo build --filter=backend",
-    "build:frontend": "turbo build --filter=frontend"
+    "build:frontend": "turbo build --filter=frontend",
+    "build:shared": ""
   }
 }

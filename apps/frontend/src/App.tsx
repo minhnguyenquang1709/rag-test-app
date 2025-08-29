@@ -13,9 +13,9 @@ function App() {
   }, []);
   return (
     <div className="size-full">
-      <div className="grid grid-cols-3">
-        <ChunkingComboboxContainer />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <FileUpload />
+        <ChunkingComboboxContainer />
       </div>
     </div>
   );

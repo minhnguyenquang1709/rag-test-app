@@ -27,6 +27,11 @@ export const requestGetConfig = async () => {
 };
 
 export const requestUploadFiles = async (formData: FormData) => {
-  const response = await httpClient.post("/upload/file/", formData);
+  const response = await httpClient.post("/upload/files/", formData);
   return response.data;
-}
+};
+
+export const requestStorageIndexes = async () => {
+  const response = await httpClient.get("/manage/storage");
+  return response.data;
+};
