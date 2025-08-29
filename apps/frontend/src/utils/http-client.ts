@@ -35,3 +35,7 @@ export const requestStorageIndexes = async () => {
   const response = await httpClient.get("/manage/storage");
   return response.data;
 };
+
+export const requestParseDocuments = async (fileNames: string[]) => {
+  const response = await httpClient.post("/parse/documents/", { fileNames });
+}

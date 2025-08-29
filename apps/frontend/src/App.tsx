@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { ChunkingComboboxContainer } from "./components/Chunking";
 import { useStoreActions } from "easy-peasy";
-import { IAppStoreModel, IConfig } from "./utils/store";
+import { IAppStoreModel } from "./utils/store";
 import FileUpload from "./components/FileUpload";
 
 function App() {
