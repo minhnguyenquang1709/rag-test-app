@@ -26,5 +26,8 @@ class IOService(SingletonMetaclass):
             "content_type": file.content_type,
         }
 
+    def get_file_path(self, filename: str) -> str:
+        return str(settings.RAW_DIR / filename)
+
 
 io_service = IOService()

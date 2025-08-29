@@ -1,27 +1,17 @@
 from datetime import datetime
 from pydantic import BaseModel, Field
-from typing import List, Dict, Optional
+from typing import Optional, Any
 
 
-class Page(BaseModel):
-    page_num: int
+class ParsedPage(BaseModel):
+    page_number: Optional[int] = None
     text: str
-    # optional: bbox lines/blocks if need layout-aware chunking in the future
+    metadata: dict[str, Any] = {}
 
 
-class ParsedDoc(BaseModel):
-    # identity
-    doc_id: str  # hash base on filename + size/text hash
-    filename: str
-    source_path: Optional[str] = None
-    # content
-    pages: List[Page]
-    text: str  # pages + text: retrieval needs to display the source
-    # metadata
-    meta: Dict[str, str] = {}  # Ex: author, created_at, mime
-    # versioning
-    artifact_version: int = 1
-    content_hash: str  # sha256 of full text
+class ParsedDocument(BaseModel):
+    file_path: str
+    pages: list[ParsedPage] = []
 
 
 class FileInfo(BaseModel):
@@ -32,7 +22,7 @@ class FileInfo(BaseModel):
 
 
 class StorageIndex(BaseModel):
-    raw_docs: List[FileInfo] = []
-    parsed_docs: List[FileInfo] = []
-    chunks: List[FileInfo] = []
-    results: List[FileInfo] = []
+    raw_docs: list[FileInfo] = []
+    parsed_docs: list[FileInfo] = []
+    chunks: list[FileInfo] = []
+    results: list[FileInfo] = []

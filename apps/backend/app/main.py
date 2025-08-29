@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api import upload_router, parse_router, management_router
 from app.utils.storage_scanner import scan_storage, backend_base
+from app.utils.registry import get_registered
 
 managers = {}
 
@@ -13,6 +14,7 @@ async def lifespan(app: FastAPI):
     print("Starting up...")
     # @TODO: initialize singleton manager
     app.state.storage_index = scan_storage(backend_base)
+    app.state.registries = get_registered()
     yield
     print("Shutting down...")
 
