@@ -38,4 +38,5 @@ export const requestStorageIndexes = async () => {
 
 export const requestParseDocuments = async (fileNames: string[]) => {
   const response = await httpClient.post("/parse/documents/", { fileNames });
+  return response.data;
 }
